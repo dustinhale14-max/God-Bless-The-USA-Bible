@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start - Select Chapter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        input[type="number"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #27ae60;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .grid a {
+            display: block;
+            background: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .grid a:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-link">&larr; Back to Books</a>
+        <h1 id="book-title">Select Chapter</h1>
+
+        <div class="input-section">
+            <input type="number" id="chapter-input" placeholder="Enter chapter number" min="1">
+            <button onclick="addChapter()">Add Chapter</button>
+        </div>
+
+        <ul class="grid" id="chapter-grid">
+            <li><a href="genesis1.html">1</a></li>
+            <li><a href="genesis2.html">2</a></li>
+            <li><a href="genesis3.html">3</a></li>
+            <li><a href="genesis4.html">4</a></li>
+            <li><a href="genesis5.html">5</a></li>
+            <li><a href="genesis6.html">6</a></li>
+            <li><a href="genesis7.html">7</a></li>
+            <li><a href="genesis8.html">8</a></li>
+            <li><a href="genesis9.html">9</a></li>
+            <li><a href="genesis10.html">10</a></li>
+            <li><a href="genesis11.html">11</a></li>
+            <li><a href="genesis12.html">12</a></li>
+            <li><a href="genesis13.html">13</a></li>
+            <li><a href="genesis14.html">14</a></li>
+            <li><a href="genesis15.html">15</a></li>
+            <li><a href="genesis16.html">16</a></li>
+            <li><a href="genesis17.html">17</a></li>
+            <li><a href="genesis18.html">18</a></li>
+            <li><a href="genesis19.html">19</a></li>
+            <li><a href="genesis20.html">20</a></li>
+            <li><a href="genesis21.html">21</a></li>
+            <li><a href="genesis22.html">22</a></li>
+            <li><a href="genesis23.html">23</a></li>
+            <li><a href="genesis24.html">24</a></li>
+            <li><a href="genesis25.html">25</a></li>
+            <li><a href="genesis26.html">26</a></li>
+            <li><a href="genesis27.html">27</a></li>
+            <li><a href="genesis28.html">28</a></li>
+            <li><a href="genesis29.html">29</a></li>
+            <li><a href="genesis30.html">30</a></li>
+            <li><a href="genesis31.html">31</a></li>
+            <li><a href="genesis32.html">32</a></li>
+            <li><a href="genesis33.html">33</a></li>
+            <li><a href="genesis34.html">34</a></li>
+            <li><a href="genesis35.html">35</a></li>
+            <li><a href="genesis36.html">36</a></li>
+            <li><a href="genesis37.html">37</a></li>
+            <li><a href="genesis38.html">38</a></li>
+            <li><a href="genesis39.html">39</a></li>
+            <li><a href="genesis40.html">40</a></li>
+            <li><a href="genesis41.html">41</a></li>
+            <li><a href="genesis42.html">42</a></li>
+            <li><a href="genesis43.html">43</a></li>
+            <li><a href="genesis44.html">44</a></li>
+            <li><a href="genesis45.html">45</a></li>
+            <li><a href="genesis46.html">46</a></li>
+            <li><a href="genesis47.html">47</a></li>
+            <li><a href="genesis48.html">48</a></li>
+            <li><a href="genesis49.html">49</a></li>
+            <li><a href="genesis50.html">50</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Optional: Simple script to read the selected book from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookName = urlParams.get('book') || 'Book';
+        document.getElementById('book-title').innerText = bookName + " Chapters";
+
+        // Function to dynamically add a new chapter link
+        function addChapter() {
+            const input = document.getElementById('chapter-input');
+            const chapterValue = input.value.trim();
+            
+            if (chapterValue === '' || chapterValue < 1) {
+                alert('Please enter a valid chapter number.');
+                return;
+            }
+
+            const grid = document.getElementById('chapter-grid');
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            
+            a.href = `text.html?chapter=${chapterValue}`;
+            a.innerText = chapterValue;
+            
+            li.appendChild(a);
+            grid.appendChild(li);
+            
+            input.value = ''; // Clear input field
+        }
+    </script>
+</body>
+</html>
+
