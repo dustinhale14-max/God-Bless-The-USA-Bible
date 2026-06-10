@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBTUB Bible - Select Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .testament {
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .grid a {
+            display: block;
+            background: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .grid a:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>God Bless The USA Bible</h1>
+        
+        <div class="testament">
+            <h2>Old Testament</h2>
+            <ul class="grid">
+                <li><a href="genesis.html">Start</a></li>
+                <li><a href="exodus.html">Out of Egypt</a></li>
+                <li><a href="leviticus.html">Prieses</a></li>
+                <li><a href="numbers.html">Census</a></li>
+                <li><a href="deuteronomy.html">Rules Second Time</a></li>
+                <!-- Add more Old Testament books here -->
+            </ul>
+        </div>
+
+        <div class="testament">
+            <h2>New Testament</h2>
+            <ul class="grid">
+                <li><a href="matthew.html">Matthew</a></li>
+                <li><a href="mark.html">Mark</a></li>
+                <li><a href="luke.html">Luke</a></li>
+                <li><a href="john.html">John</a></li>
+                <li><a href="acts.html">Jesus Guys</a></li>
+                <!-- Add more New Testament books here -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
